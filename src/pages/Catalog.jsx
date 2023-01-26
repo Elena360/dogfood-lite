@@ -2,7 +2,7 @@ import React from "react"
 import MyCard from "../components/Card"
 import {Row, Col} from "react-bootstrap"
 const Catalog = ({goods}) => {
-    return <Row className="gy-3">
+    return <Row className="gy-3 my-2">
     <Col xs={12}><h1>Каталог товаров</h1></Col>
     
     {

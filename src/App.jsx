@@ -4,6 +4,7 @@ import Catalog from "./pages/Catalog";
 import Home from "./pages/Home";
 import {Routes, Route, Link} from "react-router-dom"
 import Product from "./pages/Product";
+import Header from "./components/Header";
 
 
 
@@ -24,11 +25,7 @@ export default () => {
     })
     return <>
 
-<header className="container-fluid">header
-<Link to="/">Главная</Link>
-<Link to="/catalog">Каталог</Link>
-
-</header>
+<Header/>
 <main>
 
     {/* sx-телефон
@@ -51,6 +48,10 @@ export default () => {
             
             
         </main>
-        <footer className="container-fluid">footer</footer>
+        <footer className="container-fluid d-flex align-items-center">
+            <Container>
+            © React learning
+            </Container>
+            </footer>
     </>
 }

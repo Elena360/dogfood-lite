@@ -26,16 +26,18 @@ const Product = ({ token }) => {
         e.preventDefault();
         navigate("/catalog")
     }
-    return <Row>
-        <Col xs={12}>
-            <a href="" onClick={move}><ChevronLeft />Назад</a>
+    return <Row className="my-3">
+        <Col xs={12} className="mb-2">
+            <a href="" onClick={move} className="text-decoration-none text-secondary text-small"><ChevronLeft />Назад</a>
         </Col>
         <Col xs={12}>
             {product.name && <h1>{product.name}</h1>}
 
         </Col>
         <Col xs={5}>
+            {product.discount > 0 && <Badge bg="danger">-{product.discount} %</Badge>}
             {product.pictures && <Image src={product.pictures} alt="pic" className="w-100" />}
+
         </Col>
         <Col xs={1}></Col>
         <Col xs={6}>
@@ -54,15 +56,15 @@ const Product = ({ token }) => {
             }
             <Row className="gx-5 my-3">
                 <Col xs={4}>
-            <ButtonGroup>
-                <Button variant="outline-secondary"><Dash/></Button>
-                <Button disabled variant="outline-secondary">0</Button>
-                <Button variant="outline-secondary"><Plus/></Button>
-            </ButtonGroup>
-            </Col>
-            <Col xs={8}>
-                 <Button variant="warning" className="w-100">В корзину</Button>
-            </Col>
+                    <ButtonGroup>
+                        <Button variant="outline-secondary" disabled={cnt === 0} onClick={() => { setCnt(cnt - 1) }}><Dash /></Button>
+                        <Button disabled variant="outline-secondary">{cnt}</Button>
+                        <Button variant="outline-secondary" onClick={() => { setCnt(cnt + 1) }}><Plus /></Button>
+                    </ButtonGroup>
+                </Col>
+                <Col xs={8}>
+                    <Button variant="warning" className="w-100">В корзину</Button>
+                </Col>
             </Row>
             <div className="text-secondary"><Heart /> В избранное</div>
             <Alert variant="secondary" className="my-2">
@@ -101,7 +103,7 @@ const Product = ({ token }) => {
             <tbody>
                 {product.wight && <tr>
                     <th>Вес</th>
-                    <td>{product.wight} г</td>
+                    <td>{product.wight}</td>
                 </tr>}
                 {product.price && <tr>
                     <th>Цена</th>

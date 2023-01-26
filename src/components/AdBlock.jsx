@@ -12,7 +12,7 @@ return    <Row className="ads-block" style={style}>
              <p>{text}</p>
             </Col>
         <Col xs={4} >
-        <img src={pic} alt={caption} className="w-75"/>
+        <img src={pic} alt={caption} className="w-100 h-100"  />
         </Col>
         
     </Row>

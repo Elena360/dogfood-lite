@@ -24,7 +24,7 @@ let ads = [
 ]
 const Home = () => {
     return <>
-        <Row className="g-3">
+        <Row className="g-3 my-2 mb-4">
             <Col xs={12}><Block {...ads[0]} /></Col>
             <Col xs={12} md={6}><Block {...ads[1]} /></Col>
             <Col xs={12} md={6}><Block {...ads[2]} /></Col>
