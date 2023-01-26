@@ -15,8 +15,8 @@ const Header = () => {
                     </Link>
                     <Link to="/catalog" className="text-decoration-none text-dark">Каталог</Link>
                 </nav>
-                <Form>
-                    <Form.Control type="search" placeholder="Поиск"/>
+                <Form className="w-50">
+                    <Form.Control type="search" placeholder="Поиск" />
                 </Form>
                 <nav className="d-flex align-items-center" style={{ gap: "1rem" }}>
                     <Link to="/" className="fs-4 text-dark"><Heart /></Link>
